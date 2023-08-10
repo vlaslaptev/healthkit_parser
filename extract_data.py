@@ -21,7 +21,7 @@ for record in root.findall('Record'):
         INSERT INTO public.apple_export_record (
             record_type, source_name, source_version, unit,
             creation_date, start_date, end_date, record_value
-        ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
+        ) VALUES (%s, %s, %s, %s, %s::timestamp, %s::timestamp, %s::timestamp, %s)
     """, (
         record.attrib.get('type'), record.attrib.get('sourceName'), record.attrib.get('sourceVersion'),
         record.attrib.get('unit'), record.attrib.get('creationDate'), record.attrib.get('startDate'),
@@ -35,7 +35,7 @@ for workout in root.findall('Workout'):
             workout_activity_type, duration, duration_unit,
             source_name, source_version, device,
             creation_date, start_date, end_date
-        ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+        ) VALUES (%s, %s, %s, %s, %s, %s, %s::timestamp, %s::timestamp, %s::timestamp)
     """, (
         workout.attrib.get('workoutActivityType'), workout.attrib.get('duration'), workout.attrib.get('durationUnit'),
         workout.attrib.get('sourceName'), workout.attrib.get('sourceVersion'), workout.attrib.get('device'),

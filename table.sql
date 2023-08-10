@@ -5,9 +5,9 @@ create table public.apple_export_record
     source_name    text,
     source_version text,
     unit           text,
-    creation_date  text,
-    start_date     text,
-    end_date       text,
+    creation_date  timestamp with time zone,
+    start_date     timestamp with time zone,
+    end_date       timestamp with time zone,
     record_value   text
 );
 
@@ -20,9 +20,9 @@ create table public.apple_export_workout
     source_name           text,
     source_version        text,
     device                text,
-    creation_date         text,
-    start_date            text,
-    end_date              text
+    creation_date         timestamp with time zone,
+    start_date            timestamp with time zone,
+    end_date              timestamp with time zone
 );
 
 create table public.apple_export_activity_summary
